@@ -1,0 +1,73 @@
+✅ 1. Install Git & open Git Bash
+Git Bash comes with Git for Windows. Once installed, open Git Bash anywhere you want to work.
+
+✅ 2. Configure Git so GitHub knows who you are
+GitHub requires your name and email for commits.
+
+Code
+git config --global user.name "Marcus Perez"
+git config --global user.email "your-email@example.com"
+(These values appear in your GitHub commit history.)
+
+✅ 3. Create or clone a repository
+Option A — Start a new local repo
+Code
+mkdir my-project
+cd my-project
+git init
+
+Option B — Clone an existing GitHub repo
+Code
+git clone https://github.com/username/repository.git
+cd repository
+
+✅ 4. Connect your local folder to GitHub
+If you created a repo on GitHub first, copy its HTTPS URL and run:
+
+Code
+git remote add origin https://github.com/username/repository.git
+git remote -v
+This links your local Git Bash repo to the online GitHub repo.
+
+✅ 5. Stage & commit your changes
+Add files:
+
+Code
+git add .
+Commit:
+
+Code
+git commit -m "Initial commit"
+✅ 6. Push your code to GitHub
+Send your commits to the online repo:
+
+Code
+git push -u origin main
+The -u flag sets origin/main as your default upstream branch.
+
+✅ 7. Pull updates from GitHub
+If someone else changed the repo (or you changed it online):
+
+Code
+git pull origin main
+
+🔐 8. Authenticate with GitHub
+GitHub requires either:
+
+Option A — HTTPS + Personal Access Token (recommended)
+Git will prompt you for a password → enter your GitHub PAT, not your actual password.
+
+Option B — SSH keys
+Generate a key and add it to GitHub:
+
+Code
+ssh-keygen -t ed25519 -C "your-email@example.com"
+Then add the public key to GitHub under Settings → SSH and GPG keys.
+
+🎯 Your Git Bash → GitHub workflow (copy/paste)
+Code
+git status
+git add .
+git commit -m "update"
+git push
+This is the exact loop you’ll use daily.
